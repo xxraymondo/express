@@ -1,4 +1,5 @@
 import express, { json } from "express";
+const http= require("http")
 import {
   validateProduct,
   validateProductUpdate,
@@ -30,4 +31,12 @@ app.put("/:id",UpdateProductCont)
 app.delete("/:id",DeleteProductCont)
 
 app.post("/",CreateProductCont)
+const users={
+  id:0,
+  name:"khaled"
+}
+http.createServer((req,res)=>{
+  req.write(JSON.stringify(users))
+  res.end()
+})  
 app.listen(process.env.PORT||3050, () => console.log("Server running on http://localhost:3050"));

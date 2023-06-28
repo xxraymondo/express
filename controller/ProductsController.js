@@ -71,3 +71,5 @@ export const CreateProductCont= async (req,res)=>{
     res.status(400).json(JSON.parse(error.message));
   }
 }
+
+
